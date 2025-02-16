@@ -5,4 +5,5 @@
     <string name="etLogin">Login</string>
     <string name="etRegister">Register</string>
     <string name="etLoginText">Login to Money App</string>
+    <string name="etConfirmPassword">Confirm Password</string>
 </resources>
