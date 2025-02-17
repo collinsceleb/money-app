@@ -3,7 +3,6 @@ package com.collinsceleb.money_app.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.collinsceleb.money_app.model.Account
 import com.collinsceleb.money_app.repository.AccountRepositoryInterface

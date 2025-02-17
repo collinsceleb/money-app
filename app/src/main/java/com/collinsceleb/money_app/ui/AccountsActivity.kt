@@ -34,7 +34,7 @@ class AccountsActivity : AppCompatActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         binding = ActivityAccountsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(binding.recylerview) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(binding.recyclerview) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.updatePadding(
                 left = systemBars.left,
@@ -44,9 +44,10 @@ class AccountsActivity : AppCompatActivity() {
             )
             insets
         }
-        recyclerView = binding.recylerview
+        recyclerView = binding.recyclerview
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val accountDao: AccountDao = AppDatabase.getDatabase(application, applicationScope).accountDao()
+        val accountDao: AccountDao =
+            AppDatabase.getDatabase(application, applicationScope).accountDao()
         val accountRepository: AccountRepositoryInterface = if (useMockData) {
             MockAccountRepository()
         } else {

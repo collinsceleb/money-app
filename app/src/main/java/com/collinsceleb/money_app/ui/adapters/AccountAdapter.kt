@@ -10,24 +10,26 @@ import androidx.recyclerview.widget.RecyclerView
 import com.collinsceleb.money_app.R
 import com.collinsceleb.money_app.model.Account
 
-class AccountAdapter : ListAdapter<Account, AccountAdapter.AccountViewHolder>(AccountDiffCallback()) {
+class AccountAdapter :
+    ListAdapter<Account, AccountAdapter.AccountViewHolder>(AccountDiffCallback()) {
 
     class AccountViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val accountNumberTextView: TextView = itemView.findViewById(R.id.tvAccountNumber)
-        val accountNameTextView: TextView = itemView.findViewById(R.id.tvAccountHolder)
-        val accountTypeTextView: TextView = itemView.findViewById(R.id.tvAccountType)
-        val accountBalanceTextView: TextView = itemView.findViewById(R.id.tvBalance)
+        private val accountNumberTextView: TextView = itemView.findViewById(R.id.tvAccountNumber)
+        private val accountNameTextView: TextView = itemView.findViewById(R.id.tvAccountHolder)
+        private val accountTypeTextView: TextView = itemView.findViewById(R.id.tvAccountType)
+        private val accountBalanceTextView: TextView = itemView.findViewById(R.id.tvBalance)
 
         fun bind(account: Account) {
             accountNumberTextView.text = account.accountNumber
             accountNameTextView.text = account.accountHolder
             accountTypeTextView.text = account.accountType
-            accountBalanceTextView.text = account.accountBalance.toString()
+            accountBalanceTextView.text = String.format(account.accountBalance.toString())
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AccountViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_account, parent, false) // Replace with your item layout
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_account, parent, false)
         return AccountViewHolder(itemView)
     }
 
