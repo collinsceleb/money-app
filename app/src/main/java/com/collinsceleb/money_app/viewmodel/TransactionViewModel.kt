@@ -4,11 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.collinsceleb.money_app.model.Transaction
 import com.collinsceleb.money_app.repository.TransactionRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class TransactionViewModel(private val transactionRepository: TransactionRepository) : ViewModel() {
+    val fetchAllTransactions: LiveData<List<Transaction>> = transactionRepository.getAllTransactions()
     private val _transferStatus = MutableLiveData<Boolean>()
     val transferStatus: LiveData<Boolean> get() = _transferStatus
 

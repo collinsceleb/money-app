@@ -1,16 +1,19 @@
 package com.collinsceleb.money_app.repository
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import com.collinsceleb.money_app.data.TransactionDao
 import com.collinsceleb.money_app.model.Transaction
 
 class TransactionRepository(private val transactionDao: TransactionDao) {
-    private val accounts = mutableMapOf(
-        "1001" to 5000.0,
-        "1002" to 3000.0,
-        "1003" to 7000.0
-    )
-    suspend fun transferMoney(source: String, destination: String, amount: Double): Boolean {
+
+    fun getAllTransactions(): LiveData<List<Transaction>> = transactionDao.getAllTransactions()
+
+    private fun insertTransaction(transaction: Transaction) {
+        transactionDao.insertTransaction(transaction)
+    }
+    @androidx.room.Transaction
+    fun transferMoney(source: String, destination: String, amount: Double): Boolean {
         Log.d("Repository", "Attempting transfer: $source → $destination, $$amount")
 
         val sourceAccount = transactionDao.getAccountByNumber(source)
@@ -29,13 +32,12 @@ class TransactionRepository(private val transactionDao: TransactionDao) {
             return false
         }
 
-        // Perform transfer
         sourceAccount.accountBalance -= amount
         destinationAccount.accountBalance += amount
 
         transactionDao.updateAccount(sourceAccount)
         transactionDao.updateAccount(destinationAccount)
-        transactionDao.insertTransaction(
+        insertTransaction(
             Transaction(0, source, destination, amount, System.currentTimeMillis())
         )
 

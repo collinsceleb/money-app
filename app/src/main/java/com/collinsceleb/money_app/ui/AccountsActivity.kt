@@ -34,7 +34,7 @@ class AccountsActivity : AppCompatActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         binding = ActivityAccountsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(binding.recyclerview) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(binding.transaction) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.updatePadding(
                 left = systemBars.left,

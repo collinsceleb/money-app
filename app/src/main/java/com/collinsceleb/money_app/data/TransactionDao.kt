@@ -1,5 +1,6 @@
 package com.collinsceleb.money_app.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -19,5 +20,5 @@ interface TransactionDao {
     fun insertTransaction(transaction: Transaction)
 
     @Query("SELECT * FROM transactions ORDER BY timestamp DESC")
-    suspend fun getAllTransactions(): List<Transaction>
+    fun getAllTransactions(): LiveData<List<Transaction>>
 }

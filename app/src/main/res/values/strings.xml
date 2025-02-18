@@ -14,4 +14,7 @@
     <string name="destinationAccount">Destination Account Number</string>
     <string name="amount">Amount</string>
     <string name="transferMoney">Transfer Money</string>
+    <string name="transactionFrom"> From: </string>
+    <string name="transactionTo"> To: </string>
+    <string name="timestamp">Timestamp</string>
 </resources>
