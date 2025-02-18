@@ -1,7 +1,6 @@
 package com.collinsceleb.money_app.data
 
 import android.content.Context
-import androidx.activity.result.launch
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -14,6 +13,7 @@ import kotlinx.coroutines.launch
 @Database(entities = [Account::class, Transaction::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun accountDao(): AccountDao
+    abstract fun transactionDao(): TransactionDao
 
     companion object {
         @Volatile
@@ -25,9 +25,22 @@ abstract class AppDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
-                    "app_database"
+                    "moneyapp_database"
                 )
                     .addCallback(AppDatabaseCallback(scope))
+                    .build()
+                INSTANCE = instance
+                instance
+            }
+        }
+
+        fun getDatabase(context: Context): AppDatabase {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    AppDatabase::class.java,
+                    "moneyapp_database"
+                )
                     .build()
                 INSTANCE = instance
                 instance

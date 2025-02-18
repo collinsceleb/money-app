@@ -10,4 +10,8 @@
     <string name="accountHolder">Account Holder</string>
     <string name="accountType">Account Type</string>
     <string name="accountBalance">Account Balance</string>
+    <string name="sourceAccount">Source Account Number</string>
+    <string name="destinationAccount">Destination Account Number</string>
+    <string name="amount">Amount</string>
+    <string name="transferMoney">Transfer Money</string>
 </resources>

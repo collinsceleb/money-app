@@ -8,5 +8,5 @@ data class Account(
     @PrimaryKey val accountNumber: String,
     val accountHolder: String,
     val accountType: String,
-    val accountBalance: Double
+    var accountBalance: Double
 )
