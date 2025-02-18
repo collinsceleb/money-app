@@ -1,11 +1,9 @@
-package com.collinsceleb.money_app
+package com.collinsceleb.money_app.ui
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
-import com.collinsceleb.money_app.ui.AccountsActivity
-import com.collinsceleb.money_app.ui.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
