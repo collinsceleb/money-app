@@ -1,26 +1,47 @@
 Money App
+
 Overview
+
 This is a Money App that allows users to manage accounts, transfer money, and view transaction history while ensuring secure authentication via Firebase. The app follows the MVVM architecture and uses a bottom navigation bar for smooth navigation.
 Features
+
 User Authentication: Firebase Authentication (Email/Password) with email verification.
+
 Account Management: Users can view their accounts in a RecyclerView.
+
 Money Transfer: Form validation ensures transfers do not exceed account balance.
+
 Transaction History: Transactions are stored locally using Room and displayed in a RecyclerView.
+
 Navigation: Bottom navigation bar for easy access to major screens.
+
 Auto Logout: Firebase session expiration automatically logs users out.
+
 Unit Tests: MockK used for testing ViewModels.
+
 Technologies Used
+
 Programming Language: Kotlin
+
 Architecture: MVVM
+
 Libraries:
 Firebase Authentication for user login
+
 RecyclerView for displaying lists
+
 Room for local database management
+
 LiveData for data observation
+
 ViewModel for managing UI-related data
+
 Coroutines for background tasks
+
 MockK for unit testing
+
 Installation & Setup
+
 Clone the Repository
 
 git clone https://github.com/collinsceleb/money-app.git
@@ -32,13 +53,17 @@ Open in Android Studio
 
 Open Android Studio.
 Select "Open an existing project" and navigate to the cloned repository.
+
 Set Up Firebase
 
 
 Go to Firebase Console.
 Create a new project and register your Android app.
+
 Download the google-services.json file and place it inside app/.
+
 Enable Email/Password authentication in Firebase.
+
 Build the Project
 
 
