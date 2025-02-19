@@ -81,6 +81,7 @@ class TransferActivity : AppCompatActivity() {
         transactionViewModel.transferStatus.observe(this) { success ->
             if (success) {
                 Snackbar.make(binding.root, "Successful Transfer", Snackbar.LENGTH_LONG).show()
+                startActivity(Intent(this, MainActivity::class.java))
             } else {
                 Snackbar.make(
                     binding.root,
