@@ -14,6 +14,9 @@ room = "2.6.1"
 firebaseVersion = "33.9.0"
 googleService = "4.4.2"
 coreSplashscreen = "1.0.1"
+mockkVersion ="1.13.5"
+coroutinesTest = "1.7.3"
+coreTesting = "2.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -32,6 +35,9 @@ androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = 
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseVersion" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth-ktx" }
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "coreSplashscreen"}
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockkVersion" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutinesTest" }
+androidx-arch-core = { group = "androidx.arch.core", name = "core-testing", version.ref = "coreTesting" }
 
 
 [plugins]
