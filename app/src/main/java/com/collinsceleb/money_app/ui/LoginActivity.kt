@@ -31,6 +31,10 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
         auth = FirebaseAuth.getInstance()
+        binding.btnGoToRegister.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+
+        }
         binding.btnLogin.setOnClickListener {
             val email = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
@@ -58,9 +62,6 @@ class LoginActivity : AppCompatActivity() {
                 } else {
                     Snackbar.make(binding.root, "Failed login: ${task.exception?.message}", Snackbar.LENGTH_LONG).show()
                 }
-            }
-            binding.btnRegister.setOnClickListener {
-                startActivity(Intent(this, RegisterActivity::class.java))
             }
         }
     }

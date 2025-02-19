@@ -1,5 +1,6 @@
 package com.collinsceleb.money_app.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -53,6 +54,7 @@ class RegisterActivity : AppCompatActivity() {
                 binding.progressBar.visibility = View.GONE
                 if (task.isSuccessful) {
                     emailVerification()
+                    backToLogin()
                 } else {
                     Snackbar.make(
                         binding.root,
@@ -61,9 +63,9 @@ class RegisterActivity : AppCompatActivity() {
                     ).show()
                 }
             }
-            binding.btnBackToLogin.setOnClickListener {
-                finish()
-            }
+        }
+        binding.btnBackToLogin.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
         }
     }
 
@@ -78,5 +80,8 @@ class RegisterActivity : AppCompatActivity() {
                     .show()
             }
         }
+    }
+    private fun backToLogin() {
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 }
