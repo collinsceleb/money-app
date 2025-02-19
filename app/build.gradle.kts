@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.collinsceleb.money_app"
-        minSdk = 24
+        minSdk = 32
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.core.splashscreen)
     implementation(libs.firebase.auth)
     implementation(platform(libs.firebase.bom))
     ksp(libs.androidx.room.compiler)

@@ -49,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
                 binding.progressBar.visibility = View.GONE
                 if (task.isSuccessful) {
                     if (auth.currentUser?.isEmailVerified == true) {
-                        startActivity(Intent(this, AccountsActivity::class.java))
+                        startActivity(Intent(this, MainActivity::class.java))
                         finish()
                     } else {
                         Snackbar.make(binding.root, "Ensure your email is verified", Snackbar.LENGTH_LONG).show()

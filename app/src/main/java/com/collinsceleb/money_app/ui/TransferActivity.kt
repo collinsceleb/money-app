@@ -1,5 +1,6 @@
 package com.collinsceleb.money_app.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -8,15 +9,19 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
+import com.collinsceleb.money_app.R
 import com.collinsceleb.money_app.data.AppDatabase
 import com.collinsceleb.money_app.databinding.ActivityTransferBinding
 import com.collinsceleb.money_app.factory.TransactionViewModelFactory
 import com.collinsceleb.money_app.repository.TransactionRepository
+import com.collinsceleb.money_app.utils.AuthUtils.logout
 import com.collinsceleb.money_app.viewmodel.TransactionViewModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 
 class TransferActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTransferBinding
+    private lateinit var bottomNavigationView: BottomNavigationView
     private val transactionViewModel: TransactionViewModel by viewModels {
         TransactionViewModelFactory(
             TransactionRepository(
@@ -39,6 +44,16 @@ class TransferActivity : AppCompatActivity() {
                 bottom = systemBars.bottom
             )
             insets
+        }
+        bottomNavigationView = binding.bottomNavigationView
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> startActivity(Intent(this, MainActivity::class.java))
+                R.id.nav_accounts -> startActivity(Intent(this, AccountsActivity::class.java))
+                R.id.nav_history -> startActivity(Intent(this, TransactionHistoryActivity::class.java))
+                R.id.nav_logout -> logout(this)
+            }
+            true
         }
         binding.btnTransfer.setOnClickListener {
             val sourceAccount = binding.etSourceAccount.text.toString()

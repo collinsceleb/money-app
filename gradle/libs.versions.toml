@@ -13,6 +13,7 @@ lifecycle = "2.8.7"
 room = "2.6.1"
 firebaseVersion = "33.9.0"
 googleService = "4.4.2"
+coreSplashscreen = "1.0.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -30,6 +31,8 @@ androidx-room-compiler = { group = "androidx.room", name = "room-compiler", vers
 androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseVersion" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth-ktx" }
+androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "coreSplashscreen"}
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
