@@ -126,6 +126,8 @@ Implement Dark Mode support.
 
 Add push notifications for transactions.
 
+NOTE: **The screenshots of the app are added to drawables folder in the res folder**.
+
 Developed by Kolawole Afuye
 
 
