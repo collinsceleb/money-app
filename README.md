@@ -81,7 +81,7 @@ Run the App
 
 Connect a physical device or start an emulator.
 
-Click Run (Shift + F10) or use the play button.
+Click Run or use the play button.
 
 Running Tests
 
