@@ -117,8 +117,6 @@ Auto logout is managed by Firebase session expiration.
 
 Bottom navigation provides seamless access to major features.
 
-Fragments are avoided for simplicity.
-
 Future Improvements
 
 Improve UI with animations.
@@ -127,7 +125,8 @@ Implement Dark Mode support.
 
 Add push notifications for transactions.
 
-NOTE: **The screenshots of the app are added to drawables folder in the res folder**.
+NOTE: **The screenshots of the app are added to drawables folder in the res folder**. 
+**This application currently utilizes a multiple-activity architecture. Due to time constraints related to the submission deadline, refactoring to a single-activity architecture with fragments would not be completed on time.**
 
 Developed by Kolawole Afuye
 
