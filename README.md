@@ -3,6 +3,7 @@ Money App
 Overview
 
 This is a Money App that allows users to manage accounts, transfer money, and view transaction history while ensuring secure authentication via Firebase. The app follows the MVVM architecture and uses a bottom navigation bar for smooth navigation.
+
 Features
 
 User Authentication: Firebase Authentication (Email/Password) with email verification.
